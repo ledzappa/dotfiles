@@ -3,7 +3,9 @@ $installDev = $FALSE;
 $installVsCodeExtensions = $FALSE;
 
 # install chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; 
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 $defaultApps = @(
     "adobereader", 
@@ -26,6 +28,7 @@ $vsCodeExtensions = @(
     "alefragnani.project-manager",
     "anseki.vscode-color",
     "dsznajder.es7-react-js-snippets",
+    "DavidAnson.vscode-markdownlint",
     "eamodio.gitlens",
     "eg2.vscode-npm-script",
     "esbenp.prettier-vscode",
@@ -59,5 +62,3 @@ if ($installVsCodeExtensions) {
         code --install-extension $extension
     }
 }
-
-
